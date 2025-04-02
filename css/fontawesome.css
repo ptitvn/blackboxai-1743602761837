@@ -1,0 +1,16 @@
+/* Font Awesome icons - locally hosted version */
+@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/fa-solid-900.woff2') format('woff2');
+}
+
+.fas {
+  font-family: 'Font Awesome';
+  font-weight: 900;
+}
+
+.fa-chevron-down:before { content: "\f078"; }
+.fa-magnifying-glass:before { content: "\f002"; }
+.fa-trash:before { content: "\f1f8"; }
