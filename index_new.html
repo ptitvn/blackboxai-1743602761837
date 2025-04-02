@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý tài chính cá nhân</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wallet"></i>
+            <h1>Tài Chính Cá Nhân K24_Rikkei</h1>
+        </div>
+        <div class="user-menu">
+            <button class="user-btn">
+                <i class="fas fa-user-circle"></i>
+                <span id="user-email">Tài khoản</span>
+            </button>
+            <button class="logout-btn" title="Đăng xuất">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Banner -->
+        <section class="dashboard-banner">
+            <h2><i class="fas fa-bullseye"></i> Kiểm soát chi tiêu thông minh</h2>
+            <p>Theo dõi ngân sách và thu chi hằng tháng dễ dàng</p>
+        </section>
+
+        <!-- Finance Dashboard -->
+        <section class="finance-dashboard">
+            <h2 class="section-title"><i class="fas fa-chart-pie"></i> Quản Lý Tài Chính</h2>
+            
+            <!-- Month Selection -->
+            <div class="card month-selector">
+                <label><i class="fas fa-calendar-alt"></i> Chọn tháng:</label>
+                <input type="month" id="monthSelect" class="form-input">
+            </div>
+            
+            <!-- Budget Input -->
+            <div class="card budget-input">
+                <label><i class="fas fa-coins"></i> Ngân sách tháng (₫):</label>
+                <div class="input-group">
+                    <input type="number" id="budgetInput" placeholder="5,000,000" class="form-input">
+                    <button id="saveBudgetBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Lưu
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Remaining Balance -->
+            <div class="card balance-card">
+                <p>Số tiền còn lại</p>
+                <div id="remainingAmount" class="balance-amount">0 ₫</div>
+            </div>
+            
+            <!-- Category Management -->
+            <div class="card category-management">
+                <h3><i class="fas fa-tags"></i> Quản lý danh mục</h3>
+                <div class="category-form">
+                    <input type="text" id="categoryName" placeholder="Tên danh mục" class="form-input">
+                    <input type="number" id="categoryLimit" placeholder="Giới hạn (₫)" class="form-input">
+                    <button id="addCategoryBtn" class="btn btn-success">
+                        <i class="fas fa-plus"></i> Thêm
+                    </button>
+                </div>
+                <div id="categoriesList" class="category-list"></div>
+            </div>
+            
+            <!-- Expense Input -->
+            <div class="card expense-input">
+                <div class="expense-form">
+                    <input type="number" id="expenseAmount" placeholder="Số tiền (₫)" class="form-input">
+                    <select id="expenseCategory" class="form-select">
+                        <option value="">Chọn danh mục</option>
+                    </select>
+                    <input type="text" id="expenseNote" placeholder="Ghi chú" class="form-input">
+                    <button id="addExpenseBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Thêm
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Transaction History -->
+            <div class="card transaction-history">
+                <h3><i class="fas fa-history"></i> Lịch sử giao dịch</h3>
+                <div class="transaction-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Tìm giao dịch">
+                        <button id="searchBtn" class="btn btn-icon">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <select id="sortSelect" class="form-select">
+                        <option value="">Sắp xếp</option>
+                        <option value="asc">Giá tăng dần</option>
+                        <option value="desc">Giá giảm dần</option>
+                    </select>
+                </div>
+                <div id="expensesHistory" class="transaction-list"></div>
+                <div class="pagination">
+                    <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Budget Warning -->
+            <div id="budgetWarning" class="alert-warning"></div>
+            
+            <!-- Monthly Statistics -->
+            <div class="card monthly-stats">
+                <h3><i class="fas fa-chart-bar"></i> Thống kê chi tiêu</h3>
+                <div class="stats-header">
+                    <span>Tháng</span>
+                    <span>Chi tiêu</span>
+                    <span>Ngân sách</span>
+                    <span>Trạng thái</span>
+                </div>
+                <div id="monthlyStats" class="stats-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Quản Lý Tài Chính Cá Nhân. by Quốc Hai!</p>
+    </footer>
+
+    <script src="js/finance_core.js"></script>
+</body>
+</html>
