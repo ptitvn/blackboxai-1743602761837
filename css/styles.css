@@ -1,0 +1,86 @@
+/* Base styles matching Figma design */
+:root {
+  --primary: #4338CA;
+  --secondary: #4F46E5;
+  --success: #16A34A;
+  --danger: #DC2626;
+  --text: #333333;
+  --background: #F3F4F6;
+  --white: #FFFFFF;
+  --border: #DADADA;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+.beginning {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Form elements */
+input, button {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+button {
+  background-color: var(--secondary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Container styles */
+.container, .container2, .container3, 
+.container4, .container5, .container6,
+.container7, .container8 {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Error messages */
+.error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+/* Animation for modals */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.modal-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.modal-exit {
+    opacity: 1;
+}
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-cols-1 {
+        grid-template-columns: 1fr;
+    }
+}
